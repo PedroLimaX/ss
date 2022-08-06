@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/style.css">
+  <title>CIITI 2022</title>
+</head>
+
+<body>
+  <div class="header">
+    <div class="logo">
+      <a href="index.html"><img src="img/escudo_blanco.png" alt=""></a>
+    </div>
+    <nav class="navbar">
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li class="active"><a href="programas.html">Programas</a></li>
+        <li><a href="#">Envio de trabajos</a>
+          <ul>
+            <li><a href="fechas.html">Fechas importantes</a></li>
+            <li><a href="registro.html">Registro</a></li>
+          </ul>
+        </li>
+        <li><a href="carteles.html">Carteles</a></li>
+        <li><a href="comite.html">Comite</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+      </ul>
+    </nav>
+  </div>
+  <main class="main">
+    <h1>Programas</h1>
+    <div class="ponencia">
+      <h3>Fecha</h3>
+      <span class="fechaPonencia">Hora</span><span class="tituloPonencia">Titulo de ponencia</span>
+      <p class="nombrePonente">Nombre Ponente</p>
+      <a class="urlPonencia" href="#">url</a>
+    </div>
+
+    <div class="ponencia">
+      <h3>Fecha</h3>
+      <span class="fechaPonencia">Hora</span><span class="tituloPonencia">Titulo de ponencia</span>
+      <p class="nombrePonente">Nombre Ponente</p>
+      <a class="urlPonencia" href="#">url</a>
+    </div>
+
+    <div class="ponencia">
+      <h3>Fecha</h3>
+      <span class="fechaPonencia">Hora</span><span class="tituloPonencia">Titulo de ponencia</span>
+      <p class="nombrePonente">Nombre Ponente</p>
+      <a class="urlPonencia" href="#">url</a>
+    </div>
+
+    <div class="ponencia">
+      <h3>Fecha</h3>
+      <span class="fechaPonencia">Hora</span><span class="tituloPonencia">Titulo de ponencia</span>
+      <p class="nombrePonente">Nombre Ponente</p>
+      <a class="urlPonencia" href="#">url</a>
+    </div>
+
+  </main>
+  <footer>
+
+  </footer>
+
+  <script>
+    $(document).ready(function () {
+  $('li').click(function () {
+    $("li.active").removeClass("active");
+    $(this).addClass('active');
+  })});
+  </script>
+</body>
+
+</html>
