@@ -2,22 +2,43 @@
 @import url('https://cdn-uicons.flaticon.com/uicons-brands/css/uicons-brands.css');
 
 :root {
-    --primary-color: hsl(202, 100%, 18%);
-    --primary-color-hover: hsl(202, 100%, 15%);
-    --secondary-color: hsl(192, 100%, 44%);
-    --success-color: hsl(124, 63%, 48%);
-    --warning-color: hsl(45, 83%, 50%);
-    --danger-color: hsl(0, 61%, 50%);
-    --text-color: hsl(0, 0%, 13%);
-    --light-text-color: hsl(0, 0%, 90%);
-    --disabled-color: rgb(140, 140, 140);
+    --primary-color: hsla(202, 100%, 18%, 1);
+    --primary-color-hover: hsla(202, 100%, 15%, 1);
+    --secondary-color: hsla(192, 100%, 44%, 1);
+    --neutral-color: hsl(0, 0%, 90%);
+    --success-color: hsla(124, 63%, 48%, 1);
+    --warning-color: hsla(45, 83%, 50%, 1);
+    --danger-color: hsla(0, 61%, 50%, 1);
+    --disabled-color: hsla(0, 0%, 55%, 1);
+
+    --modulo-general-color: hsla(200, 80%, 44%, 1);
+    --modulo-tci-color: hsla(137, 85%, 43%, 1);
+    --asignaturas-optativas-color: hsla(238, 73%, 46%, 1);
+    --modulo-optativo-color: hsla(51, 100%, 55%, 1);
+    --modulo-disciplina-color: hsla(0, 0%, 52%, 1);
+    --pp-ss-color: hsla(35, 92%, 54%, 1);
+
+    /*Text, BG and Borders*/
+    --text-color: hsla(0, 0%, 13%, 1);
+    --light-text-color: hsla(0, 0%, 90%, 1);
     --line-borders: hsla(0, 0%, 0%, 0.2);
-    --modulo-general-color: rgb(22, 141, 201);
-    --modulo-tci-color: rgb(16, 204, 69);
-    --asignaturas-optativas-color: rgb(32, 37, 203);
-    --modulo-optativos-color: rgb(255, 221, 27);
-    --modulo-disciplina-color: rgb(133, 133, 133);
-    --pp-ss-color: rgb(245, 154, 28);
+    --bg-color: hsl(0, 0, 98%);
+
+    /*Background colors*/
+    --primary-color-bg: hsla(202, 100%, 28%, 0.5);
+    --secondary-color-bg: hsla(192, 100%, 44%, 0.5);
+    --success-color-bg: hsla(124, 76%, 60%, 0.5);
+    --warning-color-bg: hsla(45, 83%, 50%, 0.5);
+    --danger-color-bg: hsla(0, 61%, 50%, 0.5);
+    --disabled-color-bg: hsla(0, 0%, 55%, 0.5);
+
+    --modulo-general-color-bg: hsla(200, 80%, 44%, 0.5);
+    --modulo-tci-color-bg: hsla(137, 85%, 43%, 0.5);
+    --asignaturas-optativas-color-bg: hsla(238, 73%, 46%, 0.5);
+    --modulo-optativo-color-bg: hsla(51, 100%, 55%, 0.5);
+    --modulo-disciplina-color-bg: hsla(0, 0%, 52%, 0.5);
+    --pp-ss-color-bg: hsla(35, 92%, 54%, 0.5);
+    /**/
 }
 
 * {
@@ -34,11 +55,12 @@ a {
 
 
 .header {
-    background-color: var(--primary-color);
+    background-color: var(--tetx-light-color);
     text-align: center;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    box-shadow: 0px 1px 10px 0px var(--line-borders);
 }
 
 .logo {
@@ -63,11 +85,12 @@ a {
 ul li {
     margin: 0.5rem;
     position: relative;
+    border-radius: 15px;
 }
 
 ul li a {
     display: inline-block;
-    color: rgb(255, 255, 255);
+    color: var(--text-color);
     font-weight: 400;
     padding: 0.5rem 1rem;
     margin: 0.5rem;
@@ -77,7 +100,7 @@ ul li a {
 
 ul li:hover,
 li:focus-within {
-    background-color: var(--primary-color-hover);
+    background-color: var(--neutral-color);
     cursor: pointer;
 }
 
@@ -86,7 +109,7 @@ ul li ul li:focus-within a {
 }
 
 ul li ul {
-    background: var(--primary-color);
+    background: rgb(255,255,255);
     visibility: hidden;
     opacity: 0;
     min-width: 7rem;
@@ -150,12 +173,15 @@ span {
 
 form {
     margin: auto;
-    width: 40%;
+    width: 50%;
+    min-width: 35%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    border-color: 1px solid var(--line-borders);
+    border: 1px solid var(--line-borders);
+    border-radius: 10px;
+    padding: 5rem;
 }
 
 input {
@@ -183,37 +209,48 @@ input:focus {
     flex-direction: column;
 }
 
+.separador{
+    width: 90%;
+    height: 2px;
+    background-color:var(--line-borders);
+    margin: 2rem auto;
+}
+
 .modulo-general {
-    border: dashed var(--modulo-general-color)0.5px;
+    border: solid var(--modulo-general-color-bg) 0.2px;
+    border-radius: 10px;
 }
 
 .modulo-tci {
-    border: dashed var(--modulo-tci-color) 0.5px;
+    border: solid var(--modulo-tci-color-bg) 0.2px;
+    border-radius: 10px;
 }
 
 .asignatura-optativa {
-    border: dashed var(--asignaturas-optativas-color) 0.5px;
+    border: solid var(--asignaturas-optativas-color-bg) 0.2px;
+    border-radius: 10px;
 }
 
 .modulo-optativo {
-    border: dashed var(--modulo-optativo-color) 0.5px;
+    border: solid var(--modulo-optativo-color-bg) 0.2px;
+    border-radius: 10px;
 }
 
 .modulo-disciplina {
-    border: dashed var(--modulo-disciplina-color) 0.5px;
+    border: solid var(--modulo-disciplina-color-bg) 0.2px;
+    border-radius: 10px;
 }
 
 .pp-ss {
-    border: dashed var(--pp-ss-color) 0.5px;
+    border: solid var(--pp-ss-color-bg) 0.2px;
+    border-radius: 10px;
 }
 
 .modulo {
     margin: 0.5rem auto;
+    padding: 0.5rem;
 }
 
-.nombre-modulo{
-    border: dashed var(--line-borders) 0.5px;
-}
 .modulo-header {
     margin: auto;
     display: flex;
@@ -227,7 +264,36 @@ input:focus {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+    border-radius: 10px;
+    cursor: pointer;
+}
 
+.materia:hover{
+    background-color: var(--neutral-color);
+}
+
+.bx-check {
+    color: var(--light-text-color);
+    background-color: var(--success-color);
+    border-radius: 10px;
+    margin: 0.5rem auto;
+    padding: .1rem;
+}
+
+.bx-error {
+    color: var(--light-text-color);
+    background-color: var(--warning-color);
+    border-radius: 10px;
+    margin: 0.5rem auto;
+    padding: .1rem;
+}
+
+.bx-x {
+    color: var(--light-text-color);
+    background-color: var(--danger-color);
+    border-radius: 10px;
+    margin: 0.5rem auto;
+    padding: .1rem;
 }
 
 .save-btn {
@@ -238,7 +304,7 @@ input:focus {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: .5rem;
+    margin: 1rem;
     padding: .2rem .5rem;
     border-radius: 10px;
     font-size: 1.2rem;
@@ -261,10 +327,11 @@ input:focus {
     cursor: pointer;
 }
 
-.statu-icon{
-    border: .5px solid var(--warning-color);
-    color: var(--warning-color);
-  }
+.status-icon {
+    color: var(--light-text-color);
+    display: flex;
+    align-items: center;
+}
 
 .title-txt {
     font-size: 1.4rem;
@@ -277,8 +344,8 @@ input:focus {
 }
 
 .edit-btn {
-    border: .5px solid var(--warning-color);
-    color: var(--warning-color);
+    border: .5px solid var(--secondary-color);
+    color: var(--secondary-color);
 }
 
 .delete-btn {
