@@ -173,7 +173,7 @@ span {
 
 form {
     margin: auto;
-    width: 50%;
+    width: 90%;
     min-width: 35%;
     display: flex;
     flex-direction: column;
@@ -201,7 +201,7 @@ input:focus {
 }
 
 .semestre {
-    width: 75%;
+    width: 90%;
     margin: auto;
     margin-top: 2rem;
     text-align: center;
@@ -213,7 +213,7 @@ input:focus {
     width: 90%;
     height: 2px;
     background-color:var(--line-borders);
-    margin: 2rem auto;
+    margin: 2rrem auto;
 }
 
 .modulo-general {
@@ -249,6 +249,7 @@ input:focus {
 .modulo {
     margin: 0.5rem auto;
     padding: 0.5rem;
+    width: 65%;
 }
 
 .modulo-header {
@@ -277,7 +278,7 @@ input:focus {
     background-color: var(--success-color);
     border-radius: 10px;
     margin: 0.5rem auto;
-    padding: .1rem;
+    padding: .2rem;
 }
 
 .bx-error {
@@ -285,7 +286,7 @@ input:focus {
     background-color: var(--warning-color);
     border-radius: 10px;
     margin: 0.5rem auto;
-    padding: .1rem;
+    padding: .2rem;
 }
 
 .bx-x {
@@ -293,7 +294,22 @@ input:focus {
     background-color: var(--danger-color);
     border-radius: 10px;
     margin: 0.5rem auto;
-    padding: .1rem;
+    padding: .2rem;
+}
+
+.bx-edit-alt {
+    color: var(--light-text-color);
+    background-color: var(--primary-color);
+    border-radius: 10px;
+    margin: 0.5rem;
+    padding: .2rem;
+}
+.bx-trash-alt {
+    color: var(--light-text-color);
+    background-color: var(--secondary-color);
+    border-radius: 10px;
+    margin: 0.5rem auto;
+    padding: .2rem;
 }
 
 .save-btn {
@@ -328,6 +344,12 @@ input:focus {
 }
 
 .status-icon {
+    color: var(--light-text-color);
+    display: flex;
+    align-items: center;
+}
+
+.options-icon {
     color: var(--light-text-color);
     display: flex;
     align-items: center;
