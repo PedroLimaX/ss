@@ -13,10 +13,10 @@
 
     --modulo-general-color: hsla(200, 80%, 44%, 1);
     --modulo-tci-color: hsla(137, 85%, 43%, 1);
-    --asignaturas-optativas-color: hsla(238, 73%, 46%, 1);
+    --modulo-asignaturas-optativas-color: hsla(238, 73%, 46%, 1);
     --modulo-optativo-color: hsla(51, 100%, 55%, 1);
     --modulo-disciplina-color: hsla(0, 0%, 52%, 1);
-    --pp-ss-color: hsla(35, 92%, 54%, 1);
+    --modulo-pp-ss-color: hsla(35, 92%, 54%, 1);
 
     /*Text, BG and Borders*/
     --text-color: hsla(0, 0%, 13%, 1);
@@ -32,12 +32,13 @@
     --danger-color-bg: hsla(0, 61%, 50%, 0.5);
     --disabled-color-bg: hsla(0, 0%, 55%, 0.5);
 
-    --modulo-general-color-bg: hsla(200, 80%, 44%, 0.5);
-    --modulo-tci-color-bg: hsla(137, 85%, 43%, 0.5);
-    --asignaturas-optativas-color-bg: hsla(238, 73%, 46%, 0.5);
-    --modulo-optativo-color-bg: hsla(51, 100%, 55%, 0.5);
-    --modulo-disciplina-color-bg: hsla(0, 0%, 52%, 0.5);
-    --pp-ss-color-bg: hsla(35, 92%, 54%, 0.5);
+
+    --modulo-general-color-bg: hsla(200, 80%, 44%, 0.1);
+    --modulo-tci-color-bg: hsla(137, 85%, 43%, 0.1);
+    --modulo-asignaturas-optativas-color-bg: hsla(238, 73%, 46%, 0.1);
+    --modulo-optativo-color-bg: hsla(51, 100%, 55%, 0.1);
+    --modulo-disciplina-color-bg: hsla(0, 0%, 52%, 0.1);
+    --modulo-pp-ss-color-bg: hsla(35, 92%, 54%, 0.1);
     /**/
 }
 
@@ -109,7 +110,7 @@ ul li ul li:focus-within a {
 }
 
 ul li ul {
-    background: rgb(255,255,255);
+    background: rgb(255, 255, 255);
     visibility: hidden;
     opacity: 0;
     min-width: 7rem;
@@ -138,7 +139,6 @@ ul li ul li {
 }
 
 .btn :hover {
-
     color: var(--light-text-color);
 }
 
@@ -200,6 +200,7 @@ input:focus {
     border-bottom: 1.5px solid var(--line-borders);
 }
 
+
 .semestre {
     width: 90%;
     margin: auto;
@@ -209,48 +210,80 @@ input:focus {
     flex-direction: column;
 }
 
-.separador{
+.separador {
     width: 90%;
     height: 2px;
-    background-color:var(--line-borders);
+    background-color: var(--line-borders);
     margin: 2rrem auto;
 }
 
 .modulo-general {
-    border: solid var(--modulo-general-color-bg) 0.2px;
+    border: solid var(--modulo-general-color) 1px;
+    background-color: var(--modulo-general-color-bg);
     border-radius: 10px;
+}
+
+.modulo-general p {
+    color: var(--modulo-general-color);
 }
 
 .modulo-tci {
-    border: solid var(--modulo-tci-color-bg) 0.2px;
+    border: solid var(--modulo-tci-color) 1px;
+    background-color: var(--modulo-tci-color-bg);
     border-radius: 10px;
 }
 
-.asignatura-optativa {
-    border: solid var(--asignaturas-optativas-color-bg) 0.2px;
+.modulo-tci p {
+    color: var(--modulo-tci-color);
+}
+
+.modulo-asignatura-optativa {
+    border: solid var(--modulo-asignaturas-optativas-color) 1px;
+    background-color: var(--modulo-asignaturas-optativas-color-bg);
     border-radius: 10px;
+}
+
+.modulo-asignatura-optativa p {
+    color: var(--modulo-asignaturas-optativas-color);
 }
 
 .modulo-optativo {
-    border: solid var(--modulo-optativo-color-bg) 0.2px;
+    border: solid var(--modulo-optativo-color) 1px;
+    background-color: var(--modulo-optativo-color-bg);
     border-radius: 10px;
+}
+
+.modulo-optativo p {
+    color: var(--modulo-optativo-color);
 }
 
 .modulo-disciplina {
-    border: solid var(--modulo-disciplina-color-bg) 0.2px;
+    border: solid var(--modulo-disciplina-color) 1px;
+    background-color: var(--modulo-disciplina-color-bg);
     border-radius: 10px;
 }
 
-.pp-ss {
-    border: solid var(--pp-ss-color-bg) 0.2px;
+.modulo-disciplina p {
+    color: var(--modulo-disciplina-color);
+}
+
+.modulo-pp-ss {
+    border: solid var(--modulo-pp-ss-color) 1px;
+    background-color: var(--modulo-pp-ss-color-bg);
     border-radius: 10px;
+}
+
+.modulo-pp-ss p {
+    color: var(--modulo-pp-ss-color);
 }
 
 .modulo {
     margin: 0.5rem auto;
     padding: 0.5rem;
-    width: 65%;
+    width: 85%;
+    min-width: 65%;
 }
+
 
 .modulo-header {
     margin: auto;
@@ -260,18 +293,70 @@ input:focus {
     font-weight: 500;
 }
 
+.materiaInfo {
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    align-items: center;
+    border: 1px solid var(--line-borders);
+    border-radius: 10px;
+}
+
+.usuarioInfo {
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    align-items: center;
+    border: 1px solid var(--line-borders);
+    border-radius: 10px;
+}
+
 .materia {
     margin: auto;
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
     border-radius: 10px;
     cursor: pointer;
+    justify-content: space-around;
 }
 
-.materia:hover{
-    background-color: var(--neutral-color);
+.materia:hover {
+    background-color: white;
 }
+
+.materia .clave-materia {
+    margin: auto 3rem;
+    text-align: left;
+    width: 5%;
+}
+
+.materia .nombre-materia {
+    margin: auto 3rem;
+    text-align: left;
+    width: 20%;
+}
+
+.materia .creditos-materia {
+    margin: auto 3rem;
+    text-align: left;
+    width: 5%;
+}
+
+.materia .periodo-aprobada {
+    margin: auto 3rem;
+    text-align: center;
+    width: 10%;
+}
+
+
+.materia .status-icon {
+    margin: auto 3rem;
+    text-align: right;
+    width: 10%;
+}
+
 
 .bx-check {
     color: var(--light-text-color);
@@ -297,20 +382,7 @@ input:focus {
     padding: .2rem;
 }
 
-.bx-edit-alt {
-    color: var(--light-text-color);
-    background-color: var(--primary-color);
-    border-radius: 10px;
-    margin: 0.5rem;
-    padding: .2rem;
-}
-.bx-trash-alt {
-    color: var(--light-text-color);
-    background-color: var(--secondary-color);
-    border-radius: 10px;
-    margin: 0.5rem auto;
-    padding: .2rem;
-}
+
 
 .save-btn {
     background-color: var(--bg-color);
@@ -365,22 +437,62 @@ input:focus {
     font-size: 1.2rem;
 }
 
+.options-icon {
+    color: var(--light-text-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .edit-btn {
-    border: .5px solid var(--secondary-color);
-    color: var(--secondary-color);
+    background-color: var(--bg-color);
+    color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+    width: 100px;
+    height: 50px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    margin: 1rem;
+}
+
+.edit-btn:hover, .edit-btn .bx-edit-alt:hover{
+    background-color: var(--primary-color);
+    color: var(--light-text-color);
+    
+}
+
+.edit-btn .bx-edit-alt {
+    color: var(--primary-color);
+    width: 100%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .delete-btn {
-    border: .5px solid var(--danger-color);
-    color: var(--danger-color);
+    background-color: var(--bg-color);
+    color: var(--secondary-color);
+    border: 1px solid var(--secondary-color);
+    width: 100px;
+    height: 50px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    margin: 1rem;
 }
 
-.edit-btn:hover {
-    background-color: var(--warning-color);
-    color: var(--bg-color);
+.delete-btn:hover, .delete-btn .bx-trash-alt:hover {
+    background-color: var(--secondary-color);
+    color: var(--light-text-color);
 }
 
-.delete-btn:hover {
-    background-color: var(--danger-color);
-    color: var(--bg-color);
+.delete-btn .bx-trash-alt {
+    color: var(--secondary-color);
+    width: 100%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
