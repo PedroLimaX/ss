@@ -923,7 +923,7 @@ let semestres = [
             },
             {
                 id_modulo: 26,
-                nombre_modulo: 'Asignaturas Optativas Complememtarias',
+                nombre_modulo: 'Asignaturas Optativas Complementarias',
                 creditos_modulo: 4,
                 tipo_modulo: 'asignatura-optativa',
 
@@ -977,7 +977,7 @@ let semestres = [
                         clave_materia: 'ABC123',
                         nombre_materia: 'Asignatura Integradora del Modulo',
                         creditos_materia: 4,
-                        status: 'aprobada',
+                        status: 'pendiente',
 
                         periodo_aprobada: 'Primavera 2023',
                         programa_educativo: 'Desconocido',
@@ -987,7 +987,7 @@ let semestres = [
                         clave_materia: 'ABC123',
                         nombre_materia: 'Asignatura Formativa',
                         creditos_materia: 4,
-                        status: 'aprobada',
+                        status: 'pendiente',
 
                         periodo_aprobada: 'Primavera 2023',
                         programa_educativo: 'Desconocido',
@@ -997,7 +997,7 @@ let semestres = [
                         clave_materia: 'ABC123',
                         nombre_materia: 'Asignatura Formativa',
                         creditos_materia: 4,
-                        status: 'aprobada',
+                        status: 'pendiente',
 
                         periodo_aprobada: 'Primavera 2023',
                         programa_educativo: 'Desconocido',
@@ -1007,7 +1007,7 @@ let semestres = [
                         clave_materia: 'ABC123',
                         nombre_materia: 'Asignatura Formativa',
                         creditos_materia: 4,
-                        status: 'aprobada',
+                        status: 'pendiente',
 
                         periodo_aprobada: 'Primavera 2023',
                         programa_educativo: 'Desconocido',
@@ -1016,17 +1016,17 @@ let semestres = [
             },
             {
                 id_modulo: 29,
-                nombre_modulo: 'Asignaturas Optativas Complememtarias',
+                nombre_modulo: 'Asignaturas Optativas Complementarias',
                 creditos_modulo: 4,
                 tipo_modulo: 'asignatura-optativa',
 
                 materias: [
                     {
-                        id_materia: 66,
+                        id_materia: 72,
                         clave_materia: 'ABC123',
                         nombre_materia: 'Asignatura Optativa 4',
                         creditos_materia: 4,
-                        status: 'aprobada',
+                        status: 'pendiente',
 
                         periodo_aprobada: 'Primavera 2023',
                         programa_educativo: 'Desconocido',
@@ -1041,11 +1041,11 @@ let semestres = [
 
                 materias: [
                     {
-                        id_materia: 67,
+                        id_materia: 73,
                         clave_materia: 'ABC123',
                         nombre_materia: 'Servicio Social',
                         creditos_materia: 10,
-                        status: 'aprobada',
+                        status: 'pendiente',
 
                         periodo_aprobada: 'Primavera 2023',
                         programa_educativo: 'Desconocido',
