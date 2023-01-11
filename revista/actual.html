@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es>
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/style.css">
+  <title>CIITI 2022</title>
+</head>
+
+<body>
+  <div class="header">
+    <div class="logo">
+      <a href="index.html">
+        <h1>Revista CIITI 2022</h2>
+      </a>
+    </div>
+    <nav class="navbar">
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="about_us.html">Sobre la Revista</a></li>
+        <li><a href="envio.html">Envio de trabajos</a></li>
+        <li><a href="editorial.html">Equipo Editorial</a></li>
+        <li class="active"><a href="actual.html">Numero Actual</a></li>
+        <li><a href="anteriores.html">Numeros Anteriores</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+      </ul>
+    </nav>
+  </div>
+  <main class="main">
+    <section class="fst-section">
+      <div>
+        <a href="index.html">
+          <h2>Numero Actual: Vol 1 Num 1 (2022)</h2>
+          <span id="siglas">Publicado: dd-mm-aaaa</span>
+        </a>
+      </div>
+      <span><a href="index.html"><img src="img/book.png" alt="file.pdf"></a></span>
+    </section>
+
+    <div class="separator"></div>
+    <section class="scd-section">
+      <h2>Articulos</h2>
+      <h3>Titulo del articulo</h3>
+      <span>Autor: Lorem, ipsum.</span>
+      <div class="file-icon"><a href="index.html"><img src="img/pdf.png" alt="file.pdf"></a></div>
+    </section>
+
+    <div class="small-separator"></div>
+
+    <section class="trd-section">
+      <h3>Titulo del articulo</h3>
+      <span>Autor: Lorem, ipsum.</span>
+      <div class="file-icon"><a href="index.html"><img src="img/pdf.png" alt="file.pdf"></a></div>
+    </section>
+
+    <div class="small-separator"></div>
+
+    <section class="frt-section">
+      <h3>Titulo del articulo</h3>
+      <span>Autor: Lorem, ipsum.</span>
+      <div class="file-icon"><a href="index.html"><img src="img/pdf.png" alt="file.pdf"></a></div>
+    </section>
+
+
+  </main>
+  <footer>
+    <div class="col-1">
+      <div class="logo">
+        <img src="img/buap_logo_letra.png" alt="Logo BUAP">
+      </div>
+    </div>
+    <div class="col-2">
+      <a href="#">Lorem, ipsum.</a>
+      <a href="#">Lorem, ipsum.</a>
+      <a href="#">Lorem, ipsum.</a>
+    </div>
+    <div class="col-3">
+      <a href="#">Lorem, ipsum.</a>
+      <a href="#">Lorem, ipsum.</a>
+      <a href="#">Lorem, ipsum.</a>
+    </div>
+    <div class="socialnets">
+      <div class="fb-icon icon"><a href="facebook.com"><i class="fi fi-brands-facebook"></i></a></div>
+      <div class="yt-icon icon"><a href="youtube.com"><i class="fi fi-brands-youtube"></i></a></div>
+      <div class="tw-icon icon"><a href="twitter.com"><i class="fi fi-brands-twitter"></i></a></div>
+      <div class="ig-icon icon"><a href="instagram.com"><i class="fi fi-brands-instagram"></i></a></div>
+    </div>
+  </footer>
+
+  <script>
+    $(document).ready(function () {
+  $('li').click(function () {
+    $("li.active").removeClass("active");
+    $(this).addClass('active');
+  })});
+  </script>
+</body>
+
+</html>
