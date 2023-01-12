@@ -46,7 +46,7 @@ let semestres = [
                         clave_materia: 'ABC123',
                         nombre_materia: 'Matematicas 1',
                         creditos_materia: 4,
-                        status: 'aprobada',
+                        status: 'no_disponible',
 
                         periodo_aprobada: 'Otoño 2019',
                         programa_educativo: 'Desconocido',
@@ -1141,9 +1141,14 @@ function domMateriaStauts(semestreId, moduloId, materiaId) {
             <i class='bx bx-x'></i>
         `;
     }
-    else {
+    else if (semestres[semestreId].modulos[moduloId].materias[materiaId].status == 'pendiente'){
         element.innerHTML = `
             <i class='bx bx-error'></i>
+        `;
+    }
+    else {
+        element.innerHTML = `
+            <i class='bx bx-minus-circle'></i>
         `;
     }
 

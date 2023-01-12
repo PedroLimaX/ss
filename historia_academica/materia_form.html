@@ -1,40 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.css">
-    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
-    <title>Formulario Materia</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/style.css">
+  <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+  <title>Formulario Materia</title>
 </head>
+
 <body>
-    <section>
-      <h1>Materia</h1>
-      <form action="">
-        <label for="materiaClave">Clave: </label>
-        <input type="text" name="materia-clave" id="materiaClave"></text>
-        <br><br>
-        <label for="materiaName">Nombre: </label>
-        <input type="text" name="materia-name" id="materiaName"></text>
-        <br><br>
-        <label for="materiaName">Creditos: </label>
-        <input type="text" name="materia-creditos" id="materiaCreditos"></text>
-        <br><br>
-        <label for="materiaName">Correquisitos: </label>
-        <input type="text" name="materia-correquisito" id="materiaCorrequisito"></text>
-        <br><br>
-        <label for="materiaName">Prequisitos: </label>
-        <input type="text" name="materia-prerrequisito" id="materiaPrerrequisito"></text>
-        <br><br>
-        <label for="materiaName">Programa Educativo: </label>
-        <input type="text" name="materia-prog-edu" id="materiaProgEdu"></text>
-        <div class="save-btn btn"><a href="main.html">Guardar</a></div>
-      </form>
-    </section>
-    <main>
-      
-    </main>
-    <script src="js/main2.js"></script>
-  </body>
-  </html>
+  <div class="header">
+    <div class="logo">
+      <a href="index.html"><img src="assets/img/buap_logo_letra.png" alt=""></a>
+    </div>
+    <nav class="navbar">
+      <ul>
+        <li class="active"><a href="main.html"><i class='bx bx-home nav-icon'></i><br>Inicio</a></li>
+        <li><a href="#"><i class='bx bx-user nav-icon'></i><br>Usuario</a>
+          <ul>
+            <li><a href="index.html"><i class='bx bx-log-out nav-icon'></i><br>Cerrar Sesion</a></li>
+            <li><a href="usuario_perfil.html"><i class='bx bx-user-circle nav-icon'></i><br>Perfil</a></li>
+          </ul>
+        </li>
+        <li><a href="materia_form.html"><i class='bx bxs-book-add nav-icon'></i><br>Nueva Materia</a></li>
+        <li><a href="alumno_form.html"><i class='bx bx-user-plus nav-icon'></i><br>Nuevo Alumno</a></li>
+        <li><a href="tutor_form.html"><i class='bx bx-briefcase nav-icon'></i><br>Nuevo Tutor</a></li>
+      </ul>
+    </nav>
+  </div>
+  <section>
+    <h1>Materia</h1>
+    <form action="">
+      <label for="materiaClave">Clave: </label>
+      <input type="text" name="materia-clave" id="materiaClave"></text>
+      <br><br>
+      <label for="materiaName">Nombre: </label>
+      <input type="text" name="materia-name" id="materiaName"></text>
+      <br><br>
+      <label for="materiaName">Creditos: </label>
+      <input type="text" name="materia-creditos" id="materiaCreditos"></text>
+      <br><br>
+      <label for="materiaName">Correquisitos: </label>
+      <input type="text" name="materia-correquisito" id="materiaCorrequisito"></text>
+      <br><br>
+      <label for="materiaName">Prequisitos: </label>
+      <input type="text" name="materia-prerrequisito" id="materiaPrerrequisito"></text>
+      <br><br>
+      <label for="materiaName">Programa Educativo: </label>
+      <input type="text" name="materia-prog-edu" id="materiaProgEdu"></text>
+      <div class="save-btn btn"><a href="main.html">Guardar</a></div>
+    </form>
+  </section>
+  <main>
+
+  </main>
+  <script src="js/main2.js"></script>
+</body>
+
+</html>

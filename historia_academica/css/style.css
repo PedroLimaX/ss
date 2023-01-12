@@ -96,7 +96,13 @@ ul li a {
     padding: 0.5rem 1rem;
     margin: 0.5rem;
     text-decoration: none;
-    font-size: 1rem;
+    font-size: .85rem;
+}
+
+ul li a i{
+    color: var(--disabled-color);
+    font-size: 1.5rem;
+   
 }
 
 ul li:hover,
@@ -200,6 +206,20 @@ input:focus {
     border-bottom: 1.5px solid var(--line-borders);
 }
 
+.simbologia{
+    width: 50%;
+    border-radius: 1rem;
+    
+    margin: auto;
+    display: flex;
+    justify-content: center;
+}
+
+.simbologia span{
+    background-color: var(--neutral-color);
+    border-radius: 1rem;
+    padding: .5rem;
+}
 
 .semestre {
     width: 90%;
@@ -357,7 +377,6 @@ input:focus {
     width: 10%;
 }
 
-
 .bx-check {
     color: var(--light-text-color);
     background-color: var(--success-color);
@@ -377,6 +396,14 @@ input:focus {
 .bx-x {
     color: var(--light-text-color);
     background-color: var(--danger-color);
+    border-radius: 10px;
+    margin: 0.5rem auto;
+    padding: .2rem;
+}
+
+.bx-minus-circle {
+    color: var(--light-text-color);
+    background-color: var(--disabled-color);
     border-radius: 10px;
     margin: 0.5rem auto;
     padding: .2rem;
