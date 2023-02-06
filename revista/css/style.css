@@ -3,8 +3,10 @@
 @import url('https://cdn-uicons.flaticon.com/uicons-brands/css/uicons-brands.css');
 
 :root{
-  --primary-color: hsl(0, 0%, 13%);
-  --primary-color-hover: hsl(0, 0%, 46%);
+  --primary-color: hsl(288, 44%, 13%);
+  --primary-color-hover: hsl(263, 27%, 74%);
+  /* --primary-color: hsl(0, 0%, 13%);
+  --primary-color-hover: hsl(0, 0%, 46%); */
   --secondary-color: hsl(0, 0%, 88%);
   --text-color: hsl(0, 0%, 32%);
   --light-text-color: hsl(0, 0%, 90%);
@@ -103,7 +105,7 @@ h1{
 
 main{
   margin: 2rem 3.5rem;
-  box-shadow: 0px 0px 15px 5px var(--primary-color-hover);
+  box-shadow: 0px 0px 15px 5px var(--text-color);
   border-radius: 0.5rem;
   padding: 1rem 0rem;
 }
