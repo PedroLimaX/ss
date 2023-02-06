@@ -215,6 +215,22 @@ input:focus {
     justify-content: center;
 }
 
+.modulos{
+    width: 60%;
+    border-radius: 1rem;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+.modulos div{
+    margin: .2rem;
+}
+.modulos p {
+    font-size: 1rem;
+}
+
 .simbologia span{
     background-color: var(--neutral-color);
     border-radius: 1rem;
