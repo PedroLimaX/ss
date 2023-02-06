@@ -14,8 +14,8 @@ let semestres = [
                     {
                         id_materia: 1,
                         clave_materia: 'ABC123',
-                        nombre_materia: 'Modelado de Fenomenos fisicos',
-                        creditos_materia: 4,
+                        nombre_materia: 'Introduccion a las Ciencias de la Ingenieria',
+                        creditos_materia: 2,
                         status: 'aprobada',
 
                         periodo_aprobada: 'Otoño 2019',
@@ -24,8 +24,8 @@ let semestres = [
                     {
                         id_materia: 2,
                         clave_materia: 'ABC123',
-                        nombre_materia: 'Introduccion a las Ciencias de la Ingenieria',
-                        creditos_materia: 2,
+                        nombre_materia: 'Modelado de Fenomenos fisicos',
+                        creditos_materia: 4,
                         status: 'pendiente',
 
                         periodo_aprobada: 'Otoño 2019',
@@ -1143,7 +1143,7 @@ function domMateriaStauts(semestreId, moduloId, materiaId) {
     }
     else if (semestres[semestreId].modulos[moduloId].materias[materiaId].status == 'pendiente'){
         element.innerHTML = `
-            <i class='bx bx-error'></i>
+            <i class='bx bx-time'></i>
         `;
     }
     else {

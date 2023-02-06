@@ -401,7 +401,7 @@ input:focus {
     padding: .2rem;
 }
 
-.bx-error {
+.bx-time {
     color: var(--light-text-color);
     background-color: var(--warning-color);
     border-radius: 10px;
