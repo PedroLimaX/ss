@@ -209,7 +209,7 @@ input:focus {
 .simbologia{
     width: 50%;
     border-radius: 1rem;
-    
+    font-size: .9rem;
     margin: auto;
     display: flex;
     justify-content: center;
@@ -228,13 +228,14 @@ input:focus {
     margin: .2rem;
 }
 .modulos p {
-    font-size: 1rem;
+    font-size: .9rem;
 }
 
 .simbologia span{
     background-color: var(--neutral-color);
     border-radius: 1rem;
-    padding: .5rem;
+    padding: .3rem;
+    font-size: .8rem;
 }
 
 .semestre {
