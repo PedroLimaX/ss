@@ -216,7 +216,7 @@ input:focus {
 }
 
 .modulos{
-    width: 60%;
+    width: 100%;
     border-radius: 1rem;
     margin: auto;
     display: flex;
@@ -238,8 +238,26 @@ input:focus {
     font-size: .8rem;
 }
 
-.semestre {
+.sede {
     width: 90%;
+    margin: auto;
+    margin-top: 2rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.carrera {
+    width: 90%;
+    margin: auto;
+    margin-top: 2rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.semestre {
+    width: 100%;
     margin: auto;
     margin-top: 2rem;
     text-align: center;
@@ -376,6 +394,24 @@ input:focus {
 }
 
 .materia .creditos-materia {
+    margin: auto 3rem;
+    text-align: left;
+    width: 5%;
+}
+
+.materia .ht-materia {
+    margin: auto 3rem;
+    text-align: left;
+    width: 5%;
+}
+
+.materia .hp-materia {
+    margin: auto 3rem;
+    text-align: left;
+    width: 5%;
+}
+
+.materia .totalh-materia {
     margin: auto 3rem;
     text-align: left;
     width: 5%;
