@@ -1343,12 +1343,12 @@ function domModulos(sedeId, carreraId, semestreId) {
             <p>Modulo: ${sedes[sedeId].carreras[carreraId].semestres[semestreId].modulos[index].nombre_modulo}</p>
             <span>Creditos por Modulo: ${sedes[sedeId].carreras[carreraId].semestres[semestreId].modulos[index].creditos_modulo}</span>
             <div class='modulo-header'>
-                <span>Clave</span>
-                <span>Nombre de la Materia</span>
-                <span>C&eacute;ditos</span>
-                <span>Horas Totales</span>
-                <span>Periodo Aprobada</span>
-                <span>Status</span>
+                <span class='clave-materia'>Clave</span>
+                <span class='nombre-materia'>Nombre</span>
+                <span class='creditos-materia'>Cr&eacute;ditos</span>
+                <span class='totalh-materia'>Horas Totales</span>
+                <span class='periodo-materia'>Periodo Aprobada</span>
+                <span class='status-materia'>Status</span>
             </div>
         `;
 

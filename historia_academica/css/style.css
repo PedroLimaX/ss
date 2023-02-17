@@ -248,7 +248,7 @@ input:focus {
 }
 
 .carrera {
-    width: 90%;
+    width: 100%;
     margin: auto;
     margin-top: 2rem;
     text-align: center;
@@ -335,7 +335,7 @@ input:focus {
 .modulo {
     margin: 0.5rem auto;
     padding: 0.5rem;
-    width: 85%;
+    width: 95%;
     min-width: 65%;
 }
 
@@ -381,50 +381,59 @@ input:focus {
     background-color: white;
 }
 
-.materia .clave-materia {
+.materia .clave-materia, .modulo-header .clave-materia {
+    margin: auto 3rem;
+    text-align: left;
+    width: 1%;
+}
+
+.materia .nombre-materia{
+    
+    /* border: 1px solid red; */
+    margin: auto 3rem;
+    text-align: left;
+    width: 25%;
+}
+
+.modulo-header .nombre-materia {
+    
+    margin: auto 3rem;
+    text-align: left;
+    width: 10%;
+}
+
+.materia .creditos-materia, .modulo-header .creditos-materia {
+    margin: auto 3rem;
+    text-align: left;
+    width: 1%;
+}
+
+.materia .ht-materia, .modulo-header .ht-materia {
+    margin: auto 3rem;
+    text-align: left;
+    width: 1%;
+}
+
+.materia .hp-materia, .modulo-header .hp-materia {
     margin: auto 3rem;
     text-align: left;
     width: 5%;
 }
 
-.materia .nombre-materia {
-    margin: auto 3rem;
-    text-align: left;
-    width: 20%;
-}
-
-.materia .creditos-materia {
+.materia .totalh-materia, .modulo-header .totalh-materia {
     margin: auto 3rem;
     text-align: left;
     width: 5%;
 }
 
-.materia .ht-materia {
-    margin: auto 3rem;
-    text-align: left;
-    width: 5%;
-}
-
-.materia .hp-materia {
-    margin: auto 3rem;
-    text-align: left;
-    width: 5%;
-}
-
-.materia .totalh-materia {
-    margin: auto 3rem;
-    text-align: left;
-    width: 5%;
-}
-
-.materia .periodo-aprobada {
+.materia .periodo-aprobada, .modulo-header .periodo-aprobada {
     margin: auto 3rem;
     text-align: center;
     width: 10%;
 }
 
 
-.materia .status-icon {
+.materia .status-icon, .modulo-header .status-icon {
     margin: auto 3rem;
     text-align: right;
     width: 10%;
