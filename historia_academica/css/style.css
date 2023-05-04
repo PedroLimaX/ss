@@ -210,7 +210,7 @@ input:focus {
     width: 50%;
     border-radius: 1rem;
     font-size: .9rem;
-    margin: auto;
+    margin: auto 2rem;
     display: flex;
     justify-content: center;
 }
