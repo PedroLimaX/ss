@@ -99,7 +99,13 @@ function conteoMaterias(tabla,idcarrera){
 
 function semestreByCarrera(tabla,idcarrera){
     return new Promise((resolve,reject)=>{
-        conexion.query(`SELECT * FROM ${tabla} WHERE idcarrera=${idcarrera}`,(error,result)=>{
+        conexion.query(`SELECT semestre.*,
+                            carrera.nombre as 'nombreCarrera',
+                            sede.nombre as 'nombreSede'
+                        FROM (( ${tabla} 
+                            LEFT JOIN carrera ON carrera.id=semestre.idcarrera)
+                            LEFT JOIN sede ON sede.id = carrera.idsede)
+                        WHERE idcarrera = ${idcarrera}`,(error,result)=>{
             return error ? reject(error) : resolve(result);
         })
     });
@@ -109,7 +115,16 @@ function semestreByCarrera(tabla,idcarrera){
 
 function moduloBySemestre(tabla,idsemestre){
     return new Promise((resolve,reject)=>{
-        conexion.query(`SELECT * FROM ${tabla} WHERE idsemestre=${idsemestre}`,(error,result)=>{
+        conexion.query(`SELECT modulo.*,
+                            semestre.semestre as 'gradoSemestre',
+                            carrera.nombre as 'nombreCarrera',
+                            carrera.nombre as 'nombreCarrera',
+                            sede.nombre as 'nombreSede'
+                        FROM ((( ${tabla} 
+                            LEFT JOIN semestre ON semestre.id=modulo.idsemestre)
+                            LEFT JOIN carrera ON carrera.id=semestre.idcarrera)
+                            LEFT JOIN sede ON sede.id = carrera.idsede)
+                        WHERE idsemestre = ${idsemestre}`,(error,result)=>{
             return error ? reject(error) : resolve(result);
         })
     });
@@ -127,8 +142,12 @@ function materiaByModulo(tabla,idmodulo){
                             correquisito.id AS correquisitoClave,
                             correquisito.clave AS correquisitoClave,
                             correquisito.nombre AS correquisitoNombre,
-                            carrera.id as carreraId
-                        FROM ((((((( ${tabla}
+                            carrera.id as carreraId,
+                            modulo.nombre as moduloNombre,
+                            semestre.numero as numeroSemestre,
+                            carrera.nombre as nombreCarrera,
+                            sede.nombre as nombreSede
+                        FROM (((((((( ${tabla}
                                 LEFT JOIN materia as requisito1 ON materia.requisito = requisito1.id)
                                 LEFT JOIN materia as requisito2 ON materia.requisito2  = requisito2.id)
                                 LEFT JOIN materia as requisito3 ON materia.requisito3 = requisito3.id)
@@ -136,6 +155,7 @@ function materiaByModulo(tabla,idmodulo){
                                 LEFT JOIN modulo as modulo ON materia.idmodulo = modulo.id)
                                 LEFT JOIN semestre as semestre ON modulo.idsemestre = semestre.id)
                                 LEFT JOIN carrera as carrera ON semestre.idcarrera = carrera.id)
+                                LEFT JOIN sede as sede ON carrera.idsede = sede.id)
                         WHERE materia.idmodulo = ${idmodulo};`,(error,result)=>{
             return error ? reject(error) : resolve(result);
         })
