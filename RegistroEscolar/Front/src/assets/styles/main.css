@@ -1,0 +1,253 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://cdn-uicons.flaticon.com/uicons-brands/css/uicons-brands.css');
+
+:root {
+    --primary-color: hsla(202, 100%, 18%, 1);
+    --primary-color-hover: hsla(202, 100%, 15%, 1);
+    --secondary-color: hsla(192, 100%, 44%, 1);
+    --neutral-color: hsl(0, 0%, 90%);
+    --success-color: hsla(124, 63%, 48%, 1);
+    --warning-color: hsla(11, 75%, 52%,1);
+    --info-color: hsla(207, 90%, 54%,1);
+    --disabled-color: hsla(0, 0%, 55%, 1);
+
+    --fgus-color: hsla(200, 80%, 44%, 1);
+    --tcis-color: hsla(137, 85%, 43%, 1);
+    --ocis-color: hsla(238, 73%, 46%, 1);
+    --ists-optativo-color: hsla(45, 76%, 53%,1);
+    --ists-color: hsla(0, 0%, 52%, 1);
+    --ppst-ssst-color: hsla(29, 88%, 40%,1);
+
+    /*Text, BG and Borders*/
+    --text-color: hsla(0, 0%, 40%, 1);
+    --light-text-color: hsla(0, 0%, 90%, 1);
+    --line-borders: hsla(0, 0%, 0%, 0.2);
+
+    /*Background colors*/
+    --primary-color-bg: hsla(202, 100%, 28%, 0.2);
+    --secondary-color-bg: hsla(192, 100%, 44%, 0.2);
+    --neutral-color-bg: hsl(0, 0%, 90%, 0.2);
+    --success-color-bg: hsla(124, 76%, 60%, 0.2);
+    --warning-color-bg: hsla(11, 75%, 52%,0.2);
+    --info-color-bg: hsla(207, 90%, 54%,0.2);
+    --disabled-color-bg: hsla(0, 0%, 55%, 0.2);
+
+    /* Light */
+    --fgus-color-bg-light: hsla(200, 80%, 44%, 0.2);
+    --tcis-color-bg-light: hsla(137, 75%, 53%, 0.2);
+    --ocis-color-bg-light: hsla(238, 73%, 46%, 0.2);
+    --ists-optativo-color-bg-light: hsla(45, 76%, 53%, 0.2);
+    --ists-color-bg-light: hsla(0, 0%, 52%, 0.2);
+    --ppst-ssst-color-bg-light: hsla(29, 88%, 40%, 0.2);
+
+    /*Normal*/
+    --fgus-color-bg: hsla(200, 80%, 44%, 0.5);
+    --tcis-color-bg: hsla(137, 75%, 53%, 0.5);
+    --ocis-color-bg: hsla(238, 73%, 46%, 0.5);
+    --ists-optativo-color-bg: hsla(45, 76%, 53%, 0.5);
+    --ists-color-bg: hsla(0, 0%, 52%, 0.5);
+    --ppst-ssst-color-bg: hsla(29, 88%, 40%, 0.5);
+
+    /* Dark */
+    --primary-color-dark: hsla(202, 30%, 15%, 1);
+    --fgus-color-bg-dark: hsla(200, 80%, 44%, 0.8);
+    --tcis-color-bg-dark: hsla(137, 75%, 53%, 0.8);
+    --ocis-color-bg-dark: hsla(238, 73%, 46%, 0.8);
+    --ists-optativo-color-bg-dark: hsla(45, 76%, 53%, 0.8);
+    --ists-color-bg-dark: hsla(0, 0%, 52%, 0.8);
+    --ppst-ssst-color-bg-dark: hsla(29, 88%, 40%, 0.8);
+
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', helvetica;
+}
+
+/* main{
+    background: linear-gradient(165deg, rgba(0,58,92,1) 0%, rgba(0,38,72,1) 30%, rgb(14, 23, 62) 100%);
+} */
+
+a {
+    text-decoration: none;
+    color: var(--text-color);
+}
+
+
+h1 {
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+h2 {
+    color: var(--secondary-color);
+    font-weight: 500;
+}
+
+h3 {
+    color: var(--text-color);
+    font-weight: 500;
+}
+
+h4 {
+    color: var(--primary-color);
+    font-weight: 400;
+    text-align: center;
+}
+
+.main-text{
+    color: var(--text-color);
+    text-align: justify;
+    margin: .5rem 1.5rem;
+}
+
+.separador {
+    width: 90%;
+    height: 2px;
+    background-color: var(--line-borders);
+    margin: 2rem auto;
+}
+
+.modulo-fgus {
+    background-color: var(--fgus-color-bg);
+    background: linear-gradient(150deg,
+        var(--fgus-color-bg-light) 0%,
+        var(--fgus-color-bg) 60%,
+        var(--fgus-color-bg-dark) 100%);
+    font-weight: 500;
+    color: var(--fgus-color);
+}
+
+.primary-background{
+    background-color: var(--primary-color);
+}
+
+
+
+
+.light-text-color{
+    color: var(--light-text-color);
+}
+
+.modulo-tcis {
+    background-color: var(--tcis-color-bg);
+    background: linear-gradient(150deg,
+        var(--tcis-color-bg-light) 0%,
+        var(--tcis-color-bg) 60%,
+        var(--tcis-color-bg-dark) 100%);
+    font-weight: 500;
+    color: var(--tcis-color);
+}
+
+
+.modulo-ocis {
+    background-color: var(--ocis-color-bg);
+    background: linear-gradient(150deg,
+        var(--ocis-color-bg-light) 0%,
+        var(--ocis-color-bg) 60%,
+        var(--ocis-color-bg-dark) 100%);
+    font-weight: 500;
+    color: var(--ocis-color);
+}
+
+.modulo-ists-optativo {
+    background-color: var(--ists-optativo-color-bg);
+    background: linear-gradient(150deg,
+        var(--ists-optativo-color-bg-light) 0%,
+        var(--ists-optativo-color-bg) 60%,
+        var(--ists-optativo-color-bg-dark) 100%);
+    font-weight: 500;
+    color: var(--ists-optativo-color);
+}
+
+.modulo-ists {
+    background-color: var(--ists-color-bg);
+    background: linear-gradient(150deg,
+        var(--ists-color-bg-light) 0%,
+        var(--ists-color-bg) 60%,
+        var(--ists-color-bg-dark) 100%);
+    font-weight: 500;
+    color: var(--ists-color);
+}
+
+.modulo-ppst-ssst {
+    background-color: var(--ppst-ssst-color-bg);
+    background: linear-gradient(150deg,
+        var(--ppst-ssst-color-bg-light) 0%,
+        var(--ppst-ssst-color-bg) 60%,
+        var(--ppst-ssst-color-bg-dark) 100%);
+    font-weight: 500;
+    color: var(--ppst-ssst-color);
+}
+
+.modulo-default {
+    background-color: var(--neutral-color);
+    background: linear-gradient(150deg,
+        var(--neutral-color-bg) 0%,
+        var(--neutral-color) 100%);
+    font-weight: 500;
+    color: var(--text-color);
+}
+
+.aprobada {
+    background-color: var(--success-color-bg) !important;
+}
+
+.no-aprobada {
+    background-color: var(--warning-color-bg) !important;
+}
+
+.cursando {
+    background-color: var(--info-color-bg) !important;
+}
+
+.no-cursada {
+    background-color: var(--disabled-color-bg) !important;
+}
+
+/* SCROLL BAR */
+
+/* width */
+    ::-webkit-scrollbar {
+        width: 12px;
+    }
+    
+    /* Track */
+    ::-webkit-scrollbar-track {
+        box-shadow: inset 0 0 5px var(--disabled-color-bg);
+        border-radius: 10px;
+    }
+    
+    /* Handle */
+    ::-webkit-scrollbar-thumb {
+        background: var(--primary-color-bg);
+        border-radius: 2px;
+    }
+    
+    /* Handle on hover */
+    ::-webkit-scrollbar-thumb:hover {
+        background: var(--primary-color); 
+    }
+
+
+
+/* 
+*{
+    box-shadow: 0 0 0 1px rgba(162, 0, 255, 0.2);
+}
+
+*{
+    color: rgba(162, 0, 255, 1) !important;
+    background-color: rgba(0, 0, 0, 1) !important;
+}
+* .primary, *.secondary, .v-application .primary, .v-application .secondary, .v-application .secondary::before, .v-tooltip, .v-chip , .v-chip--outlined, .v-chip::before, .v-progress-linear, .v-progress-linear__background, .v-progress-linear__buffer, *::before{
+    color: rgba(162, 0, 255, 1) !important;
+    background-color: rgba(0, 0, 0, 1) !important;
+    background: radial-gradient(circle,
+        rgba(0, 0, 0, .1) 50%,
+        rgba(162, 0, 255, .2) 100%) !important;
+    font-weight: 500;
+    box-shadow: 0 0 2px 1px rgba(162, 0, 255, 1) !important;
+} */
