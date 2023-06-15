@@ -109,7 +109,7 @@
               <v-tooltip top>
               <template v-slot:activator="{ on, attrs }">
                 <v-chip v-if="Item.trabajando"
-                  color="pink lighten-3"
+                  color="deep-purple lighten-2"
                   dark
                   class=" ma-2"
                   v-bind="attrs"
