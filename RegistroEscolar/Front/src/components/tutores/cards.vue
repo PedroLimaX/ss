@@ -8,7 +8,7 @@
               class="mb-2"
               @click="newItem()"
             >
-              Nueva Tutor
+              Nuevo Tutor
             </v-btn>
           </div>
     <v-row>
@@ -23,16 +23,74 @@
           min-width="350"
         >
           <v-card-title>
-            {{ Item.nombre }}
+            {{ Item.nombre }} {{Item.apaterno}} {{Item.amaterno}}
           </v-card-title>
         
-          <v-card-subtitle>
-            {{Item.apaterno}} {{Item.amaterno}}
+          <v-card-text>
             
+            <span class="font-weight-medium">ID de Docente:</span> {{Item.iddocente}}
             <v-spacer></v-spacer>
 
-            ID: {{Item.iddocente}}
-          </v-card-subtitle>
+            <span class="font-weight-medium">NSS:</span> {{ Item.nss }}
+            
+            <v-divider class="ml-6 mr-6 mt-4 mb-4"></v-divider>
+          
+            <span class="font-weight-medium">Datos de Contacto:</span>
+          
+            <v-spacer></v-spacer>
+
+            <v-tooltip right>
+              <template v-slot:activator="{ on, attrs }">
+                <v-icon 
+                    class="ml-2"
+                    color="primary"
+                    v-bind="attrs"
+                    v-on="on"
+                  >
+                    mdi mdi-email
+                </v-icon>
+              </template>
+              <span >Correo Institucional</span>
+            </v-tooltip>
+
+            <span class="font-weight-medium ml-2">{{ Item.correo_institucional }}</span>
+            
+            <v-spacer></v-spacer>
+            
+            <v-tooltip right>
+              <template v-slot:activator="{ on, attrs }">
+                <v-icon 
+                    class="ml-2"
+                    color="secondary"
+                    v-bind="attrs"
+                    v-on="on"
+                  >
+                    mdi mdi-email-outline
+                </v-icon>
+              </template>
+              <span >Correo Personal</span>
+            </v-tooltip>
+            
+            <span class="font-weight-medium ml-2">{{ Item.correo_personal }}</span> 
+            
+            <v-spacer></v-spacer>
+            
+            <v-tooltip right>
+              <template v-slot:activator="{ on, attrs }">
+                <v-icon 
+                    class="ml-2"
+                    v-bind="attrs"
+                    v-on="on"
+                  >
+                    mdi mdi-phone
+                </v-icon>
+              </template>
+              <span >Número de Teléfono</span>
+            </v-tooltip>
+            
+            <span class="font-weight-medium ml-2">{{ Item.telefono }}</span> 
+            
+          </v-card-text>
       
           <v-card-actions class="d-flex justify-center">
               <!-- -----------------------VER ALUMNOS-------------------------- -->
@@ -120,8 +178,13 @@
       this.itemSelected={
           id:0,
           nombre:'',
-          direccion:'',
-          municipio: '',
+          apaterno:'',
+          amaterno: '',
+          nss:'',
+          correo_institucional:'',
+          correo_personal:'',
+          telefono:'',
+          iddocente: '',
       }
       this.dialog = true;
     },

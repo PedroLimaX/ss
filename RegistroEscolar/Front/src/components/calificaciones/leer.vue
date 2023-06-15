@@ -82,7 +82,7 @@
 
             <v-col cols="10">
               <v-card-text v-if="Item.requisito1Nombre">
-                Requisito 1: <span >{{ Item.requisito1Nombre }}</span>
+                Requisito 1: <span >{{Item.requisito1Clave}} - {{ Item.requisito1Nombre }}</span>
                 
                 <v-tooltip top>
                     <template v-slot:activator="{ on, attrs }">
@@ -161,7 +161,7 @@
 
             <v-col cols="10">
               <v-card-text v-if="Item.requisito2Nombre">
-                Requisito 2: <span >{{ Item.requisito2Nombre }}</span>
+                Requisito 2: <span >{{Item.requisito2Clave}} - {{ Item.requisito2Nombre }}</span>
                 <v-tooltip top>
                     <template v-slot:activator="{ on, attrs }">
                       <v-chip v-if="Item.requisito2Estatus == 'Aprobada'"
@@ -239,7 +239,7 @@
 
             <v-col cols="10">
               <v-card-text v-if="Item.requisito3Nombre">
-                Requisito 3: <span >{{ Item.requisito3Nombre }}</span>
+                Requisito 3: <span >{{Item.requisito3Clave}} - {{ Item.requisito3Nombre }}</span>
                 <v-tooltip top>
                     <template v-slot:activator="{ on, attrs }">
                       <v-chip v-if="Item.requisito3Estatus == 'Aprobada'"
@@ -317,7 +317,7 @@
 
             <v-col cols="10">
               <v-card-text v-if="Item.correquisitoNombre">
-                Correquisito: <span >{{ Item.correquisitoNombre }}</span>
+                Correquisito: <span > {{Item.correquisitoClave}} - {{ Item.correquisitoNombre }}</span>
                 <v-tooltip top>
                     <template v-slot:activator="{ on, attrs }">
                       <v-chip v-if="Item.correquisitoEstatus == 'Aprobada'"

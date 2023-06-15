@@ -46,24 +46,24 @@
           no-gutters>
             <v-col v-if="Item.requisito" cols="12" sm="12">
               <v-card-text class="font-weight-medium">
-                Requisito 1: <span>{{ Item.requisito1Nombre }}</span>
+                Requisito 1: <span> {{Item.requisito1Clave}} - {{ Item.requisito1Nombre }}</span>
               </v-card-text>
             </v-col>
             <v-col v-if="Item.requisito2" sm="12">
               <v-card-text class="font-weight-medium">
-                Requisito 2: <span>{{ Item.requisito2Nombre }}</span> 
+                Requisito 2: <span>{{Item.requisito2Clave}} - {{ Item.requisito2Nombre }}</span> 
               </v-card-text>
             </v-col>
 
             <v-col v-if="Item.requisito3" sm="12">
               <v-card-text class="font-weight-medium">
-                Requisito 3: <span>{{ Item.requisito3Nombre }}</span> 
+                Requisito 3: <span>{{Item.requisito3Clave}} - {{ Item.requisito3Nombre }}</span> 
               </v-card-text>
             </v-col>
 
             <v-col v-if="Item.correquisito" cols="12">
               <v-card-text class="font-weight-medium">
-                Correquisito: <span>{{ Item.correquisitoNombre }}</span> 
+                Correquisito: <span>{{Item.correquisitoClave}} - {{ Item.correquisitoNombre }}</span> 
               </v-card-text>
             </v-col>
           </v-row>

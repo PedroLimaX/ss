@@ -53,6 +53,54 @@
                 ></v-text-field>
               </v-col>
 
+              <v-col cols="12" sm="6">
+                <v-text-field
+                  label="NSS*"
+                  v-model="Item.nss"
+                  required
+                  hint="Número de Seguro Social del Alumno"
+                ></v-text-field>
+              </v-col>
+
+              <v-col sm="6">
+                <v-select
+                    :items="GrupoFK"
+                    :item-text="GrupoFK => ` Generación ${GrupoFK.generacion} Sección ${GrupoFK.seccion}`"
+                    item-value="id"
+                    v-model="Item.idgrupo"
+                    label="Grupo"
+                    type="number"
+                    return-object
+                    @input="setGrupoId($event)"
+                ></v-select>
+              </v-col>
+
+              <v-col cols="12">
+                <v-text-field
+                  label="Correo Institucional*"
+                  v-model="Item.correo_institucional"
+                  required
+                  hint="Correo Institucional del Docente"
+                ></v-text-field>
+              </v-col>
+
+              <v-col cols="12" sm="6">
+                <v-text-field
+                  label="Correo Personal*"
+                  v-model="Item.correo_personal"
+                  required
+                  hint="Correo Personal del Docente"
+                ></v-text-field>
+              </v-col>
+              <v-col sm="6">
+                <v-text-field
+                  label="Teléfono*"
+                  v-model="Item.telefono"
+                  required
+                  hint="Número de Teléfono del Docente"
+                ></v-text-field>
+              </v-col>
+
               <v-col
                 cols="12"
                 sm="6"
@@ -69,18 +117,14 @@
                   v-model="Item.titulado"
                 ></v-checkbox>
               </v-col>
-              <v-col cols="12">
-                <v-select
-                    :items="GrupoFK"
-                    :item-text="GrupoFK => ` Generacion ${GrupoFK.generacion} Seccion ${GrupoFK.seccion}`"
-                    item-value="id"
-                    v-model="Item.idgrupo"
-                    label="Grupo"
-                    type="number"
-                    return-object
-                    @input="setGrupoId($event)"
-                ></v-select>
+
+              <v-col sm="6">
+                <v-checkbox
+                  label="Marque si el alumno está trabajando"
+                  v-model="Item.trabajando"
+                ></v-checkbox>
               </v-col>
+              
             </v-row>
           </v-container>
           <small>*Campos Obligatorios</small>
@@ -131,7 +175,12 @@ export default {
                   nombre:this.Item.nombre,
                   apaterno:this.Item.apaterno,
                   amaterno:this.Item.amaterno,
+                  nss:this.Item.nss,
+                  correo_institucional:this.Item.correo_institucional,
+                  correo_personal:this.Item.correo_personal,
+                  telefono:this.Item.telefono,
                   estatus:this.Item.estatus,
+                  trabajando:this.Item.trabajando,
                   titulado:this.Item.titulado,
                   matricula:this.Item.matricula,
                   idgrupo:this.Item.idgrupo,

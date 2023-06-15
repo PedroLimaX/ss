@@ -1,7 +1,7 @@
 <template>
   <div>
     <goBack/>
-    <!-- <span class="d-none"> {{ verSede(ItemFK.body[0].idsede) }}</span> -->
+    <span class="d-none"> {{ verSede(ItemFK.body[0].idsede) }}</span>
     <div>
       <v-row>
         <v-col class="text-center">

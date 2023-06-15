@@ -26,7 +26,7 @@
                 ></v-text-field>
               </v-col>
 
-              <v-col cols="12">
+              <v-col cols="12" sm="6">
                 <v-text-field
                   label="Apellido Paterno*"
                   v-model="Item.apaterno"
@@ -34,7 +34,7 @@
                   hint="Apellido Paterno del Docente"
                 ></v-text-field>
               </v-col>
-              <v-col cols="12">
+              <v-col sm="6">
                 <v-text-field
                   label="Apellido Materno*"
                   v-model="Item.amaterno"
@@ -43,12 +43,47 @@
                 ></v-text-field>
               </v-col>
 
-              <v-col cols="12">
+              <v-col cols="12" sm="6">
                 <v-text-field
                   label="ID*"
                   v-model="Item.iddocente"
                   required
                   hint="ID del Docente"
+                ></v-text-field>
+              </v-col>
+
+              <v-col sm="6">
+                <v-text-field
+                  label="NSS*"
+                  v-model="Item.nss"
+                  required
+                  hint="Número de Seguro Social del Docente"
+                ></v-text-field>
+              </v-col>
+
+              <v-col cols="12">
+                <v-text-field
+                  label="Correo Institucional*"
+                  v-model="Item.correo_institucional"
+                  required
+                  hint="Correo Institucional del Docente"
+                ></v-text-field>
+              </v-col>
+
+              <v-col cols="12" sm="6">
+                <v-text-field
+                  label="Correo Personal*"
+                  v-model="Item.correo_personal"
+                  required
+                  hint="Correo Personal del Docente"
+                ></v-text-field>
+              </v-col>
+              <v-col sm="6">
+                <v-text-field
+                  label="Teléfono*"
+                  v-model="Item.telefono"
+                  required
+                  hint="Número de Teléfono del Docente"
                 ></v-text-field>
               </v-col>
               

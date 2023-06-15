@@ -166,6 +166,10 @@
 
         headers: [
         {
+          text: 'Clave',
+          value: 'materiaClave',
+        },
+        {
           text: 'Materia',
           align: 'start',
           sortable: false,

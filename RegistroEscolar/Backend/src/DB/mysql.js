@@ -84,7 +84,8 @@ function carreraBySede(tabla,idsede){
 
 function conteoMaterias(tabla,idcarrera){
     return new Promise((resolve,reject)=>{
-        conexion.query(`SELECT materia.nombre as 'materiaNombre', semestre.numero as 'semestreMateria' , COUNT(if(calificacion.estatus = 'No aprobada',1,null)) as 'NoAprobadasTotal',
+        conexion.query(`SELECT materia.clave as 'materiaClave',
+                            materia.nombre as 'materiaNombre', semestre.numero as 'semestreMateria' , COUNT(if(calificacion.estatus = 'No aprobada',1,null)) as 'NoAprobadasTotal',
                             COUNT(if(calificacion.estatus = 'No cursada',1,null)) as 'NoCursadasTotal'
                             FROM ((((${tabla}
                                 LEFT JOIN materia ON calificacion.idmateria = materia.id)
@@ -201,12 +202,16 @@ function calificacionByAlumno(tabla,idalumno){
                             materia.clave as 'califMateriaClave',
                             materia.nombre as 'califMateriaNombre',
                             materia.creditos as 'califMateriaCreditos',
+                            requisito1.clave AS 'requisito1Clave',
                             requisito1.nombre AS 'requisito1Nombre',
                             requisito1Calificacion.estatus AS 'requisito1Estatus',
+                            requisito2.clave AS 'requisito2Clave',
                             requisito2.nombre AS 'requisito2Nombre',
                             requisito2Calificacion.estatus AS 'requisito2Estatus',
+                            requisito3.clave AS 'requisito3Clave',
                             requisito3.nombre AS 'requisito3Nombre',
                             requisito3Calificacion.estatus AS 'requisito3Estatus',
+                            correquisito.clave AS 'correquisitoClave',
                             correquisito.nombre AS 'correquisitoNombre',
                             correquisitoCalificacion.estatus AS 'correquisitoEstatus',
                             modulo.nombre as 'califModuloNombre',

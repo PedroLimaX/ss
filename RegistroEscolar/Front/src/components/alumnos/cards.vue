@@ -20,7 +20,7 @@
         <v-card
           class="mx-auto rounded-xl pa-2"
           width="450"
-          height="250"
+          height="400"
         >
           <v-card-title>
             <div class="text--primary">{{Item.matricula}}</div>
@@ -104,14 +104,92 @@
           </v-card-title>
         
           <v-card-subtitle >
-            <div class="text--primary">{{Item.nombre}} {{Item.apaterno}} {{Item.amaterno}}</div>
+            <div class="text--primary">{{Item.nombre}} {{Item.apaterno}} {{Item.amaterno}}
+            
+              <v-tooltip top>
+              <template v-slot:activator="{ on, attrs }">
+                <v-chip v-if="Item.trabajando"
+                  color="pink lighten-3"
+                  dark
+                  class=" ma-2"
+                  v-bind="attrs"
+                  v-on="on"
+                  x-small
+                >
+                  Trabajando
+                </v-chip>
+              </template>
+              <span>El alumno está trabajando en el área<br>Puede titularse por experiencia laboral</span>
+            </v-tooltip>
+            </div>
+
+            
           </v-card-subtitle>
             
           <v-card-text>
             Carrera: {{Item.siglasCarrera}}
           <v-spacer></v-spacer>
             Generación {{Item.generacionGrupo}}  Sección {{Item.seccionGrupo}}
+            <v-spacer></v-spacer>
+            <span class="font-weight-medium">NSS:</span> {{ Item.nss }}
+            <v-divider class="ml-6 mr-6 mt-4 mb-4"></v-divider>
+            
+          <span class="font-weight-medium">Datos de Contacto:</span>
+        
+          <v-spacer></v-spacer>
+
+          <v-tooltip right>
+            <template v-slot:activator="{ on, attrs }">
+              <v-icon 
+                  class="ml-2"
+                  color="primary"
+                  v-bind="attrs"
+                  v-on="on"
+                >
+                  mdi mdi-email
+              </v-icon>
+            </template>
+            <span >Correo Institucional</span>
+          </v-tooltip>
+
+          <span class="font-weight-medium ml-2">{{ Item.correo_institucional }}</span>
+          
+          <v-spacer></v-spacer>
+          
+          <v-tooltip right>
+            <template v-slot:activator="{ on, attrs }">
+              <v-icon 
+                  class="ml-2"
+                  color="secondary"
+                  v-bind="attrs"
+                  v-on="on"
+                >
+                  mdi mdi-email-outline
+              </v-icon>
+            </template>
+            <span >Correo Personal</span>
+          </v-tooltip>
+          
+          <span class="font-weight-medium ml-2">{{ Item.correo_personal }}</span> 
+          
+          <v-spacer></v-spacer>
+          
+          <v-tooltip right>
+            <template v-slot:activator="{ on, attrs }">
+              <v-icon 
+                  class="ml-2"
+                  v-bind="attrs"
+                  v-on="on"
+                >
+                  mdi mdi-phone
+              </v-icon>
+            </template>
+            <span >Número de Teléfono</span>
+          </v-tooltip>
+          
+          <span class="font-weight-medium ml-2">{{ Item.telefono }}</span> 
           </v-card-text>
+          
 
 
           <v-card-actions class="d-flex justify-center">
@@ -205,7 +283,13 @@
           nombre:'',
           apaterno:'',
           amaterno: '',
+          nss:'',
+          correo_institucional:'',
+          correo_personal:'',
+          telefono:'',
           estatus: '',
+          titulado:false,
+          trabajando:false,
           idgrupo:null,
           idtutor:this.tutorId,
       }
