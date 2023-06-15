@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 09-05-2023 a las 20:01:57
+-- Tiempo de generación: 15-06-2023 a las 03:13:17
 -- Versión del servidor: 10.4.27-MariaDB
 -- Versión de PHP: 8.0.25
 
@@ -33,8 +33,13 @@ CREATE TABLE `alumno` (
   `nombre` varchar(100) NOT NULL,
   `apaterno` varchar(150) NOT NULL,
   `amaterno` varchar(150) DEFAULT NULL,
+  `nss` varchar(255) DEFAULT NULL COMMENT 'Numero de seguro social',
+  `correo_institucional` varchar(255) NOT NULL,
+  `correo_personal` varchar(255) NOT NULL,
+  `telefono` varchar(255) NOT NULL,
   `estatus` varchar(45) NOT NULL COMMENT 'El estatus puede ser: activo, baja, permiso temporal, egresado',
   `titulado` tinyint(1) NOT NULL DEFAULT 0,
+  `trabajando` tinyint(1) NOT NULL DEFAULT 0,
   `idgrupo` int(11) NOT NULL,
   `idtutor` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci;
@@ -43,18 +48,18 @@ CREATE TABLE `alumno` (
 -- Volcado de datos para la tabla `alumno`
 --
 
-INSERT INTO `alumno` (`id`, `matricula`, `nombre`, `apaterno`, `amaterno`, `estatus`, `titulado`, `idgrupo`, `idtutor`) VALUES
-(1, '201928846', 'Pedro', 'Degante', 'Lima', 'Activo', 0, 1, 1),
-(2, '201900000', 'Mauricio', 'Jiménez', 'Vega', 'Activo', 0, 2, 2),
-(3, '201927245', 'Juan Carlos', 'Tlachi', 'Barranco', 'Activo', 0, 1, 1),
-(4, '201922222', 'Otoniel', 'Bruno', 'Valdez', 'Baja', 0, 1, 1),
-(5, '201966109', 'Sebastian', 'Castañeda', 'Alvarado', 'Activo', 0, 1, 1),
-(8, '201957735', 'Marcos Jafet', 'Valadez', 'Castanedo', 'Activo', 0, 1, 1),
-(9, '201966770', 'Ian Joacim', 'German', 'Galindo', 'Activo', 0, 1, 1),
-(10, '201800000', 'Jesus', 'Cristo', 'De Nazareth', 'Egresado', 1, 5, 1),
-(11, '201811111', 'Ejemplo', 'Ejemplo', 'Ejemplo', 'Permiso Temporal', 0, 5, 1),
-(12, '201969007', 'Vidal', 'Zap', 'Bernabe', 'Activo', 0, 2, 2),
-(13, '201952865', 'Axel Edrei', 'Marin', 'Robles', 'Activo', 0, 1, 1);
+INSERT INTO `alumno` (`id`, `matricula`, `nombre`, `apaterno`, `amaterno`, `nss`, `correo_institucional`, `correo_personal`, `telefono`, `estatus`, `titulado`, `trabajando`, `idgrupo`, `idtutor`) VALUES
+(1, '201928846', 'Pedro', 'Degante', 'Lima', '69160124314', 'pedro.degante@alumno.buap.mx', 'pedro99slip@gmail.com', '2462380354', 'Activo', 0, 0, 1, 1),
+(2, '201900000', 'Mauricio', 'Jiménez', 'Vega', '11111111111', 'mauricio.jimenez@alumno.buap.mx', 'mauriciojimenez@gmail.com', '1111111111', 'Activo', 0, 1, 2, 2),
+(3, '201927245', 'Juan Carlos', 'Tlachi', 'Barranco', '22222222222', 'juan.tlachi@alumno.buap.mx', 'juantlachi@gmail.com', '0123456789', 'Activo', 0, 0, 1, 1),
+(4, '201922222', 'Otoniel', 'Bruno', 'Valdez', '33333333333', 'otoniel.bruno@alumno.buap.mx', 'otonielbruno@gmail.com', '2222222222', 'Baja', 0, 0, 1, 1),
+(5, '201966109', 'Sebastian', 'Castañeda', 'Alvarado', '44444444444', 'sebastian.castanedaa@alumno.buap.mx', 'sebastiancastaneda@gmail.com', '3333333333', 'Activo', 0, 0, 1, 1),
+(8, '201957735', 'Marcos Jafet', 'Valadez', 'Castanedo', '55555555555', 'marcos.valadez@alumno.buap.mx', 'marcosvaladez@gmail.com', '1234567890', 'Activo', 0, 0, 1, 1),
+(9, '201966770', 'Ian Joacim', 'German', 'Galindo', '66666666666', 'ian.german@alumno.buap.mx', 'iangerman@gmail.com', '9999999999', 'Activo', 0, 1, 1, 1),
+(10, '201800000', 'Jesus', 'Cristo', 'De Nazareth', '77777777777', 'jesus.nazareth@alumno.buap.mx', 'jesuscristo@gmail.com', '7777777777', 'Egresado', 1, 0, 5, 1),
+(11, '201811111', 'Ejemplo', 'Ejemplo', 'Ejemplo', '88888888888', 'ejemplo.ejemplo@alumno.buap.mx', 'ejemplo@gmail.com', '4444444444', 'Permiso Temporal', 0, 0, 5, 1),
+(12, '201969007', 'Vidal', 'Zap', 'Bernabe', '99999999999', 'vidal.zap@alumno.buap.mx', 'vidalzap@gmail.com', '5555555555', 'Activo', 0, 0, 2, 2),
+(13, '201952865', 'Axel Edrei', 'Marin', 'Robles', '00000000000', 'axel.marin@alumno.buap.mx', 'axeledrei@gmail.com', '6666666666', 'Activo', 0, 1, 1, 1);
 
 -- --------------------------------------------------------
 
@@ -148,11 +153,11 @@ INSERT INTO `calificacion` (`id`, `estatus`, `periodo`, `extraordinario`, `recur
 (58, 'Aprobada', 'Primavera 2022', 0, NULL, 8.0, 1, 55),
 (59, 'Aprobada', 'Primavera 2022', 0, NULL, 9.0, 1, 56),
 (60, 'Aprobada', 'Primavera 2022', 0, NULL, 10.0, 1, 57),
-(70, 'No cursada', 'Otoño 2022', 0, NULL, NULL, 1, 73),
-(71, 'Cursando', 'Primavera 2023', 0, NULL, NULL, 1, 114),
-(72, 'Cursando', 'Primavera 2023', 0, NULL, NULL, 1, 115),
-(73, 'Cursando', 'Primavera 2023', 0, NULL, NULL, 1, 116),
-(74, 'Cursando', 'Primavera 2023', 0, NULL, NULL, 1, 72),
+(70, 'Cursando', 'Primavera 2023', 0, NULL, NULL, 1, 73),
+(71, 'Aprobada', 'Primavera 2023', 0, NULL, 9.0, 1, 114),
+(72, 'Aprobada', 'Primavera 2023', 0, NULL, 10.0, 1, 115),
+(73, 'Aprobada', 'Primavera 2023', 0, NULL, 6.0, 1, 116),
+(74, 'Aprobada', 'Primavera 2023', 0, NULL, NULL, 1, 72),
 (76, 'Aprobada', 'Otoño 2019', 0, NULL, 9.0, 8, 2),
 (77, 'Aprobada', 'Otoño 2019', 0, NULL, 8.0, 8, 1),
 (78, 'Aprobada', 'Otoño 2019', 0, NULL, 8.0, 8, 3),
@@ -289,7 +294,7 @@ INSERT INTO `calificacion` (`id`, `estatus`, `periodo`, `extraordinario`, `recur
 (212, 'Aprobada', 'Otoño 2022', 0, NULL, 10.0, 9, 66),
 (213, 'No cursada', NULL, 0, NULL, NULL, 9, 73),
 (217, 'No cursada', NULL, 0, NULL, NULL, 9, 72),
-(218, 'Cursando', 'Primavera 2023', 0, NULL, NULL, 1, 117),
+(218, 'Aprobada', 'Primavera 2023', 0, NULL, 10.0, 1, 117),
 (225, 'Aprobada', 'Otoño 2019', 0, NULL, 6.0, 5, 2),
 (226, 'Aprobada', 'Otoño 2019', 0, NULL, 6.0, 5, 1),
 (227, 'Aprobada', 'Otoño 2019', 0, NULL, 6.0, 5, 3),
@@ -925,7 +930,8 @@ CREATE TABLE `sede` (
 
 INSERT INTO `sede` (`id`, `nombre`, `direccion`, `municipio`) VALUES
 (1, 'San José Chiapa', 'Calle 2 sur s/n Ciudad Modelo', 'San José Chiapa'),
-(14, 'Prueba', 'Prueba', 'Prueba');
+(14, 'Tecamachalco', 'Tecama', 'Prueba'),
+(15, 'Prueba tiemp Acajete', 'Acajete', '');
 
 -- --------------------------------------------------------
 
@@ -967,6 +973,10 @@ CREATE TABLE `tutor` (
   `nombre` varchar(100) NOT NULL,
   `apaterno` varchar(100) NOT NULL,
   `amaterno` varchar(100) DEFAULT NULL,
+  `nss` varchar(255) NOT NULL,
+  `correo_institucional` varchar(255) NOT NULL,
+  `correo_personal` varchar(255) NOT NULL,
+  `telefono` varchar(255) NOT NULL,
   `iddocente` varchar(45) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci;
 
@@ -974,9 +984,9 @@ CREATE TABLE `tutor` (
 -- Volcado de datos para la tabla `tutor`
 --
 
-INSERT INTO `tutor` (`id`, `nombre`, `apaterno`, `amaterno`, `iddocente`) VALUES
-(1, 'Diana Ivonne', 'Tapia', 'López', '123456789'),
-(2, 'Irianely Ivonne', 'Pérez', 'Juárez', '777');
+INSERT INTO `tutor` (`id`, `nombre`, `apaterno`, `amaterno`, `nss`, `correo_institucional`, `correo_personal`, `telefono`, `iddocente`) VALUES
+(1, 'Diana Ivonne', 'Tapia', 'López', '36925814700', 'ivone.tapia@correo.buap.mx', 'diana@gmail.com', '3692581470', '123456789'),
+(2, 'Irianely Ivonne', 'Pérez', 'Juárez', '14725836900', 'ivonne.perezju@correo.buap.mx', 'irianely@gmail.com', '3216549870', '666666666');
 
 -- --------------------------------------------------------
 
@@ -997,13 +1007,13 @@ CREATE TABLE `usuario` (
 --
 
 INSERT INTO `usuario` (`id`, `username`, `password`, `registered`, `last_login`) VALUES
-(2, 'administrador', '$2a$10$N5MwVJojoeVzYGjuMqMjmun66c7I/GkPRCLR.QLoF7n.XEmtseh1G', '2023-04-06 13:18:10', '2023-05-09 10:36:40'),
-(8, '201928846', '$2a$10$nw1YiiDngioMhb5iPFcRP.hDpgc19VPzwgZchv/M.EAup6vNhVldu', '2023-04-04 22:52:54', '2023-04-24 14:48:18'),
+(2, 'administrador', '$2a$10$N5MwVJojoeVzYGjuMqMjmun66c7I/GkPRCLR.QLoF7n.XEmtseh1G', '2023-04-06 13:18:10', '2023-06-07 19:53:12'),
+(8, '201928846', '$2a$10$nw1YiiDngioMhb5iPFcRP.hDpgc19VPzwgZchv/M.EAup6vNhVldu', '2023-04-04 22:52:54', '2023-05-19 11:21:23'),
 (9, 'NSS526946', '$2a$10$nS4/jLDp4mboRI3Nk4hHIuLCxMC4XQ5VGFhcc8eU/1Vza9Yueun7i', '2023-04-21 12:18:54', '2023-04-21 12:19:26'),
-(563784, '201966770', '$2a$10$cGFrlXYcTAbxzVbj4uG9HetB.P0RJCYyilFvbBZ9fBFrCs/U7Bv2W', '2023-04-05 16:13:56', '2023-04-24 14:07:21'),
+(563784, '201966770', '$2a$10$cGFrlXYcTAbxzVbj4uG9HetB.P0RJCYyilFvbBZ9fBFrCs/U7Bv2W', '2023-04-05 16:13:56', '2023-05-19 11:31:22'),
 (563785, '201966109', '$2a$10$l1yDWkFwvxDLn2uFE/LCz.8.dqvLH.RSeWvQiCakL3/ZsL8o/WxEK', '2023-04-05 16:41:29', '2023-04-21 09:44:08'),
 (563786, '201952865', '$2a$10$Dema8wS83wJCMEkYWgifBelCFDX1n3XZcy/NNG413VKdSSmr0z6nS', '2023-04-05 18:20:09', '2023-04-05 20:06:29'),
-(563787, '123456789', '$2a$10$i1Be1qNGs8MeQTiMM.KqnODrITiHZy1Fyu6/orwtTCB.h3CpzR8w2', '2023-04-06 13:08:17', '2023-04-21 12:25:12'),
+(563787, '123456789', '$2a$10$i1Be1qNGs8MeQTiMM.KqnODrITiHZy1Fyu6/orwtTCB.h3CpzR8w2', '2023-04-06 13:08:17', '2023-05-19 11:27:27'),
 (563788, '201911111', '$2a$10$QjHOxMdHlvnx7fUlWI4VOudbHklBrD46w5tNNAp557HcFY8uf9uQa', '2023-04-11 14:18:59', '2023-04-11 16:18:47');
 
 --
@@ -1133,7 +1143,7 @@ ALTER TABLE `modulo`
 -- AUTO_INCREMENT de la tabla `sede`
 --
 ALTER TABLE `sede`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT de la tabla `semestre`
